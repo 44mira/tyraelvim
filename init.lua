@@ -1,14 +1,49 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- optionally enable 24-bit colour
-vim.opt.termguicolors = true
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+-- [[ tyraelvim Keymaps ]]
+
+-- shorthand for binding keymap
+local bind = vim.keymap.set
+
+-- Toggle the NvimTree
+bind('n', '<leader>f', '<cmd>NvimTreeToggle<CR>', { desc = 'Open [F]ile Tree' })
+
+-- Toggle lines for indented
+bind('n', '<leader>i', '<cmd>IBLToggle<CR>', { desc = 'Toggle [I]ndent Blank Line' })
+
+-- Additional normal bind shortcut for ergonomics
+bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
+
+-- Close a tab
+bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
+
+-- Cycle through tabs
+bind('n', '[b', '<cmd>BufferLineCyclePrev<CR>', { desc = 'Previous [B]uffer' })
+bind('n', ']b', '<cmd>BufferLineCycleNext<CR>', { desc = 'Next [B]uffer' })
+
+-- Rearrange tabs
+bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
+bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
+
+-- Jump to tab
+for i = 1, 9 do
+  bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+end
+
+-- Markdown preview
+bind('n', 'md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own' })
+
+-- Optional Racket Lambda bind
+-- bind('n', '<leader>l', 'iλ<Esc>', { desc = 'Insert Lambda' })
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -71,39 +106,6 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 8
-
--- [[ tyraelvim Keymaps ]]
-
--- shorthand for binding keymap
-local bind = vim.keymap.set
-
--- Toggle the NvimTree
-bind('n', '<leader>f', '<cmd>:NvimTreeToggle<CR>', { desc = 'Open [F]ile Tree' })
-
--- Toggle lines for indented
-bind('n', '<leader>i', '<cmd>:IBLToggle<CR>', { desc = 'Toggle [I]ndent Blank Line' })
-
--- Additional normal bind shortcut for ergonomics
-bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
-
--- Close a tab
-bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
-
--- Cycle through tabs
-bind('n', '[b', '<cmd>:BufferLineCyclePrev<CR>', { desc = 'Previous [B]uffer' })
-bind('n', ']b', '<cmd>:BufferLineCycleNext<CR>', { desc = 'Next [B]uffer' })
-
--- Rearrange tabs
-bind('n', '<leader>}', '<cmd>:BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
-bind('n', '<leader>{', '<cmd>:BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
-
--- Jump to tab
-for i = 1, 9 do
-  bind('n', ('<M-%d>'):format(i), ('<cmd>:BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
-end
-
--- Optional Racket Lambda bind
--- bind('n', '<leader>l', 'iλ<Esc>', { desc = 'Insert Lambda' })
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
