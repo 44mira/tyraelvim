@@ -13,7 +13,7 @@ vim.opt.termguicolors = true
 ========         .----------------------.   | === |          ========
 ========         |.-""""""""""""""""""-.|   |-----|          ========
 ========         ||                    ||   | === |          ========
-========         ||   KICKSTART.NVIM   ||   |-----|          ========
+========         ||   TYRAEL.VIM       ||   |-----|          ========
 ========         ||                    ||   | === |          ========
 ========         ||                    ||   |-----|          ========
 ========         ||:Tutor              ||   |:::::|          ========
@@ -33,7 +33,7 @@ What is Kickstart?
   Kickstart.nvim is a starting point for your own configuration.
     The goal is that you can read every line of code, top-to-bottom, understand
     what your configuration is doing, and modify it to suit your needs.
-
+    
     Once you've done that, you can start exploring, configuring and tinkering to
     make Neovim your own! That might mean leaving kickstart just the way it is for a while
     or immediately breaking it into modular pieces. It's up to you!
@@ -108,6 +108,8 @@ vim.opt.relativenumber = true
 --  Experiment for yourself to see if you like it!
 
 vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -145,7 +147,7 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '» ', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -164,6 +166,7 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.keymap.set('n', '<leader>f', '<cmd>:NvimTreeToggle<CR>', { desc = 'Open [F]ile Tree' })
+vim.keymap.set('n', '<leader>i', '<cmd>:IBLToggle<CR>', { desc = 'Toggle [I]ndent Blank Line' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
@@ -193,6 +196,10 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+vim.keymap.set('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Normal mode' })
+vim.keymap.set('n', '<leader>l', 'iλ<Esc>', { desc = 'Insert Lambda' })
 
 -- vim.keymap.set('n', '<C-h>', '<cmd><C-U>TmuxNavigateLeft<CR>', { desc = 'Tmux: Window Left' })
 -- vim.keymap.set('n', '<C-l>', '<cmd><C-U>TmuxNavigateRight<CR>', { desc = 'Tmux: Window Right' })
@@ -235,7 +242,8 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup {
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+
+  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -554,6 +562,7 @@ require('lazy').setup {
         html = {},
         cssls = {},
         eslint = {},
+        solargraph = { autoformat = false, formatting = false },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -561,7 +570,6 @@ require('lazy').setup {
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
-        --
 
         lua_ls = {
           -- cmd = {...},
@@ -590,6 +598,9 @@ require('lazy').setup {
           },
         },
       }
+
+      require('lspconfig').uiua.setup {}
+      require('lspconfig').racket_langserver.setup {}
 
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
@@ -628,16 +639,17 @@ require('lazy').setup {
       notify_on_error = false,
       format_on_save = {
         timeout_ms = 500,
-        lsp_fallback = true,
+        lsp_fallback = false,
       },
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'black' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
+        javascript = { { 'prettierd', 'prettier' } },
+        typescript = { { 'prettierd', 'prettier' } },
       },
     },
   },
@@ -700,7 +712,7 @@ require('lazy').setup {
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<CR>'] = cmp.mapping.confirm { select = true },
 
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
@@ -740,17 +752,22 @@ require('lazy').setup {
     -- change the command in the config to whatever the name of that colorscheme is
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
-    'sainnhe/sonokai',
+    'folke/tokyonight.nvim',
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- Load the colorscheme here
-      vim.cmd.colorscheme 'sonokai'
+      vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
 
   -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  {
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = { signs = false },
+  },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
@@ -797,7 +814,7 @@ require('lazy').setup {
 
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
+        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'python', 'c', 'cpp', 'javascript' },
         -- Autoinstall languages that are not installed
         auto_install = true,
         highlight = { enable = true },
