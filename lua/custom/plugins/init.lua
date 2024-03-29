@@ -1,4 +1,4 @@
-local textblocks = dofile 'C:\\Users\\Legolas\\.config\\nvim\\textblocks.lua'
+local textblocks = require 'textblocks'
 
 return {
   { 'm4xshen/autoclose.nvim', opts = {} },
@@ -7,9 +7,7 @@ return {
     'nvim-tree/nvim-tree.lua',
     version = '*',
     lazy = false,
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       view = {
         side = 'right',
