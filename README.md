@@ -4,8 +4,6 @@
 > This Neovim configuration is based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 > Refer there for features not covered in this documentation.
 
-> Please file an issue for bugs and I will try to address them ASAP.
-
     888                                       888          d8b
     888                                       888          Y8P
     888                                       888
@@ -19,6 +17,16 @@
            "Y88P"
     
 And he has finally made his own distribution.
+
+## Version Changelogs
+
+This is the main branch!
+
+## Installation
+
+> **IMPORTANT**: This repository doubles as my backup for my configuration backup so clone from a stable branch version not the main one!
+
+Refer to *kickstart.nvim*'s installation guide, but replace the GitHub repo with `https://github.com/44mira/tyraelvim.git/tree/<STABLE BRANCH>`
 
 ## Features
 
@@ -39,9 +47,14 @@ And he has finally made his own distribution.
     - HTML `html`
     - CSS `cssls`
     - Rust `rust_analyzer`
-    - Elixir `elixirls` (disabled by default, refer to this [documentation](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#elixirls))
+    - Elixir `elixirls` (disabled by default, if it isn't, then disable it. Refer to this [documentation](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#elixirls))
 
 ## Keymappings
+
+From `kickstart.nvim`, you can press `<leader>sk` to search for particular keymappings. Moreover, `kickstart.nvim` has `which-key.nvim` for hints.
+
+<details>
+    <summary> <code>init.lua</code> code snippet</summary>
 
 ```lua
 -- ./init.lua
@@ -77,6 +90,7 @@ end
 -- Markdown preview
 bind('n', 'md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own' })
 ```
+</details>
 
 ## Configuration
 
@@ -85,3 +99,7 @@ Additional plugins may be appended unto `./lua/custom/plugins/init.lua`. This is
 Be sure to remove unused LSPs in `./init.lua`.
 
 Dashboard text tables are in `./textblocks.lua`.
+
+## To be added
+
+Might replace `nvimtree` with `oil.nvim`.
