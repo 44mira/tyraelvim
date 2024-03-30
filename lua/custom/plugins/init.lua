@@ -1,4 +1,5 @@
-local textblocks = require 'textblocks'
+-- change this to your absolute path to textblocks.lua
+local textblocks = dofile [[C:\Users\Legolas\.config\nvim\textblocks.lua]]
 
 return {
   { 'm4xshen/autoclose.nvim', opts = {} },
