@@ -107,5 +107,5 @@ return {
 
 Be sure to remove unused LSPs in `./init.lua`.
 
-## Features to be added:
-- Theme picker
+> **RECOMMENDED**: Add custom default directories in `./lua/custom/plugins/init.lua`
+
