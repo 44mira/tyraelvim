@@ -20,7 +20,7 @@ And he has finally made his own distribution.
 
 ## Version Changelogs
 
-This is the main branch!
+- Committed and documented everything!
 
 ## Installation
 
