@@ -21,9 +21,7 @@ return {
     opts = {
       header = textblocks.header(),
       directories = {
-        [[~\.config\nvim]],
-        [[~\Desktop\pandora\ACADEMICS\prac]],
-        [[C:\Users\Legolas\AppData\Roaming\alacritty]],
+        -- Add your custom directories here
       },
       footer = { textblocks.footers() },
       highlight_groups = {

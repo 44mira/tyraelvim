@@ -56,7 +56,7 @@ local servers = {
   clangd = {},
   pyright = {},
   rust_analyzer = {},
-  -- elixirls = { cmd = { 'C:\\Users\\Legolas\\Desktop\\pandora\\compilers and interpreters\\elixir-ls-v0.19.0\\language_server.bat' } },
+  elixirls = { cmd = { 'C:\\Users\\Legolas\\Desktop\\pandora\\compilers and interpreters\\elixir-ls-v0.19.0\\language_server.bat' } },
   tailwindcss = {},
   html = {},
   cssls = {},
