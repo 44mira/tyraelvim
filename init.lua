@@ -40,6 +40,8 @@ bind('n', 'md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own
 -- Optional Racket Lambda bind
 -- bind('n', '<leader>l', 'iλ<Esc>', { desc = 'Insert Lambda' })
 
+-- [[ Language Servers ]]
+
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 --
@@ -49,14 +51,15 @@ bind('n', 'md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own
 --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
 --  - settings (table): Override the default settings passed when initializing the server.
 --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+
 local servers = {
   clangd = {},
   pyright = {},
   rust_analyzer = {},
+  -- elixirls = { cmd = { 'C:\\Users\\Legolas\\Desktop\\pandora\\compilers and interpreters\\elixir-ls-v0.19.0\\language_server.bat' } },
   tailwindcss = {},
   html = {},
   cssls = {},
-  eslint = {},
 
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
   --
@@ -519,6 +522,8 @@ require('lazy').setup {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+      require('lspconfig').racket_langserver.setup {}
+
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
@@ -669,12 +674,12 @@ require('lazy').setup {
     -- change the command in the config to whatever the name of that colorscheme is
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
-    'folke/tokyonight.nvim',
+    'sainnhe/gruvbox-material',
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- Load the colorscheme here
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
 
