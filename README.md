@@ -4,17 +4,7 @@
 > This Neovim configuration is based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 > Refer there for features not covered in this documentation.
 
-    888                                       888          d8b
-    888                                       888          Y8P
-    888                                       888
-    888888 888  888 888d888  8888b.   .d88b.  888 888  888 888 88888b.d88b.
-    888    888  888 888P"       "88b d8P  Y8b 888 888  888 888 888 "888 "88b
-    888    888  888 888     .d888888 88888888 888 Y88  88P 888 888  888  888
-    Y88b.  Y88b 888 888     888  888 Y8b.     888  Y8bd8P  888 888  888  888
-     "Y888  "Y88888 888     "Y888888  "Y8888  888   Y88P   888 888  888  888
-               888
-          Y8b d88P
-           "Y88P"
+![image](https://github.com/44mira/tyraelvim/assets/116419708/5497aaab-46bf-49e0-9a4c-42d51b78d6d3)
     
 And he has finally made his own distribution.
 
