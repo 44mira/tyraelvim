@@ -4,24 +4,17 @@
 > This Neovim configuration is based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 > Refer there for features not covered in this documentation.
 
-    888                                       888          d8b
-    888                                       888          Y8P
-    888                                       888
-    888888 888  888 888d888  8888b.   .d88b.  888 888  888 888 88888b.d88b.
-    888    888  888 888P"       "88b d8P  Y8b 888 888  888 888 888 "888 "88b
-    888    888  888 888     .d888888 88888888 888 Y88  88P 888 888  888  888
-    Y88b.  Y88b 888 888     888  888 Y8b.     888  Y8bd8P  888 888  888  888
-     "Y888  "Y88888 888     "Y888888  "Y8888  888   Y88P   888 888  888  888
-               888
-          Y8b d88P
-           "Y88P"
+![image](https://github.com/44mira/tyraelvim/assets/116419708/5497aaab-46bf-49e0-9a4c-42d51b78d6d3)
     
 And he has finally made his own distribution.
 
 ## Version Changelogs
 
-- Added `oil.nvim`
-- BREAKING CHANGE: Deprecated `nvimtree`
+- Overhauled the modularization of plugins
+    - Hopefully this makes configuration even more accessible than previous
+- Removed the need to manage an absolute path with `./textblocks.lua`
+    - It is now within the same module as its depedendent code: `./lua/custom/plugins/dashboard.lua`
+- Removed defaults for the dashboard footers.
 
 ## Installation
 
@@ -29,8 +22,7 @@ And he has finally made his own distribution.
 
 Refer to *kickstart.nvim*'s installation guide, but replace the GitHub repo with `https://github.com/44mira/tyraelvim.git/tree/<STABLE BRANCH>`
 
-Then, you need to set the Dashboard's `textblocks.lua` absolute path in `./lua/custom/plugins/init.lua` to match its current path in your installation.
-- I'm currently unaware of a better way to do this, will take suggestions.
+It is *recommended* that you then customize the text pools found in `./lua/custom/plugins/dashboard.lua`.
 
 ## Features
 
@@ -101,10 +93,25 @@ bind('n', 'md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own
 
 ## Configuration
 
-Additional plugins may be appended unto `./lua/custom/plugins/init.lua`. This is also where you can configure individual plugin settings
+Additional plugins are added by creating a corresponding `.lua` file in `./lua/custom/plugins/` that returns a Lazy.nvim table.
+- The file names don't have to match the plugins, they just have to be in the directory.
+
+Example:
+
+```lua
+-- ./lua/custom/plugins/oil.lua
+
+return {
+  'stevearc/oil.nvim',
+  opts = {},
+  -- Optional dependencies
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+}
+```
 
 Be sure to remove unused LSPs in `./init.lua`.
 
 > **RECOMMENDED**: Add custom default directories in `./lua/custom/plugins/init.lua`
 
-Dashboard text tables are in `./textblocks.lua`.
+## Features to be added:
+- Theme picker

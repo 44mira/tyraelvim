@@ -1,8 +1,12 @@
-local M = {}
+-- Dashboard configuration file
 
-math.randomseed(os.time())
+----------------
+-- Text Pools --
+----------------
 
-local headers = {
+-- Add your headers here. Use [[ ]] Lua rawstrings to preserve spaces.
+-- Each table element is treated as a line, and it is recommended you leave an empty line at the end.
+HEADERS = {
   {
     [[                                                                            ]],
     [[  888                                       888          d8b                ]],
@@ -33,27 +37,50 @@ local headers = {
   },
 }
 
-function M.header()
-  return headers[math.random(#headers)]
-end
-
-local footers = {
-  'Life is like a box of chocolates. Lami makadawat og kisses.',
-  'Gago saon og gawas?',
-  'Sharmaigne. Sharmaigne. Sharmaigne. Sharmaigne. Sharmaigne.',
+-- Add your footers here as single-line strings.
+FOOTERS = {
   'Vim btw.',
-  'Javascript is nice until you have to write Javascript.',
-  'If knowledge is power, and power can control the world; then you are my world.',
-  'If ang bisaya sa nikaon, naka?',
-  'Segmentation fault (core dumped)',
-  'Error at line 69.',
-  'rm -rf /',
-  'public static void main(String args[])',
-  'Trans Rights are Human Rights!',
 }
 
-function M.footers()
-  return footers[math.random(#footers)]
+-- Use [[ ]] Lua rawstrings for directories. Invalid directories will NOT show up.
+DIRECTORIES = {
+  [[~\.config\nvim]],
+}
+
+------------------------
+-- Randomization Code --
+------------------------
+
+math.randomseed(os.time())
+
+local function header()
+  return HEADERS[math.random(#HEADERS)]
 end
 
-return M
+local function footer()
+  return FOOTERS[math.random(#FOOTERS)]
+end
+
+---------------------
+-- Plugin Settings --
+---------------------
+
+local dashboard_plugin = {
+  'MeanderingProgrammer/dashboard.nvim',
+  event = 'VimEnter',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  opts = {
+    header = header(),
+    directories = DIRECTORIES,
+    footer = { footer() },
+    highlight_groups = {
+      header = 'bufferLineCurrent',
+      icon = 'bufferLineCurrent',
+      directory = 'jsParen',
+      hotkey = 'AerialOperatorIcon',
+      footer = 'jsParen',
+    },
+  },
+}
+
+return dashboard_plugin
