@@ -20,8 +20,6 @@ And he has finally made his own distribution.
 
 ## Version Changelogs
 
-- Committed and documented everything!
-- Removed preset directories for dashboard.
 - Added `oil.nvim`
 - BREAKING CHANGE: Deprecated `nvimtree`
 
