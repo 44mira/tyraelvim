@@ -16,6 +16,7 @@ And he has finally made his own distribution.
     - It is now within the same module as its depedendent code: `./lua/custom/plugins/dashboard.lua`
 - Removed defaults for the dashboard footers.
 - Added a theme module from wherein you can easily modify the theme.
+- Remove `elixir_ls` from dependencies.
 
 ## Installation
 
@@ -44,7 +45,6 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
     - HTML `html`
     - CSS `cssls`
     - Rust `rust_analyzer`
-    - Elixir `elixirls` (disabled by default, if it isn't, then disable it. Refer to this [documentation](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#elixirls))
 
 ## Keymappings
 
