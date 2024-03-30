@@ -5,16 +5,25 @@ return {
   { 'm4xshen/autoclose.nvim', opts = {} },
   { 'windwp/nvim-ts-autotag', opts = {} },
   {
-    'nvim-tree/nvim-tree.lua',
-    version = '*',
-    lazy = false,
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = {
-      view = {
-        side = 'right',
-      },
-    },
   },
+
+  -- [[ Nvimtree ]]
+  -- {
+  --   'nvim-tree/nvim-tree.lua',
+  --   version = '*',
+  --   lazy = false,
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --   opts = {
+  --     view = {
+  --       side = 'right',
+  --     },
+  --   },
+  -- },
+
   {
     'MeanderingProgrammer/dashboard.nvim',
     event = 'VimEnter',

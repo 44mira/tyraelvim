@@ -9,8 +9,11 @@ vim.g.maplocalleader = ' '
 -- shorthand for binding keymap
 local bind = vim.keymap.set
 
--- Toggle the NvimTree
-bind('n', '<leader>f', '<cmd>NvimTreeToggle<CR>', { desc = 'Open [F]ile Tree' })
+-- Toggle the NvimTree (Replaced by oil.nvim)
+-- bind('n', '<leader>f', '<cmd>NvimTreeToggle<CR>', { desc = 'Open [F]ile Tree' })
+
+-- Open an Oil buffer
+bind('n', '<leader>f', '<cmd>Oil --float<CR>', { desc = 'Open [F]ile explorer buffer' })
 
 -- Toggle lines for indented
 bind('n', '<leader>i', '<cmd>IBLToggle<CR>', { desc = 'Toggle [I]ndent Blank Line' })

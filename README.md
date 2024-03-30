@@ -33,7 +33,7 @@ Then, you need to set the Dashboard's `textblocks.lua` absolute path in `./lua/c
 
 ## Features
 
-- File tree *[nvimtree](https://github.com/nvim-tree/nvim-tree.lua)*
+- File handling using a text buffer *[oil.nvim](https://github.com/stevearc/oil.nvim)*
 - Tabs *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
 - Customizable dashboard *[dashboard.nvim](https://github.com/MeanderingProgrammer/dashboard.nvim)*
 - Markdown previewing *[markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)*
@@ -65,8 +65,11 @@ From `kickstart.nvim`, you can press `<leader>sk` to search for particular keyma
 -- shorthand for binding keymap
 local bind = vim.keymap.set
 
--- Toggle the NvimTree
-bind('n', '<leader>f', '<cmd>NvimTreeToggle<CR>', { desc = 'Open [F]ile Tree' })
+-- Toggle the NvimTree (Replaced by oil.nvim)
+-- bind('n', '<leader>f', '<cmd>NvimTreeToggle<CR>', { desc = 'Open [F]ile Tree' })
+
+-- Open an Oil buffer
+bind('n', '<leader>f', '<cmd>Oil --float<CR>', { desc = 'Open [F]ile explorer buffer' })
 
 -- Toggle lines for indented
 bind('n', '<leader>i', '<cmd>IBLToggle<CR>', { desc = 'Toggle [I]ndent Blank Line' })
@@ -102,7 +105,3 @@ Additional plugins may be appended unto `./lua/custom/plugins/init.lua`. This is
 Be sure to remove unused LSPs in `./init.lua`.
 
 Dashboard text tables are in `./textblocks.lua`.
-
-## To be added
-
-Might replace `nvimtree` with `oil.nvim`.
