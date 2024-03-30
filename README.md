@@ -100,6 +100,7 @@ Additional plugins may be appended unto `./lua/custom/plugins/init.lua`. This is
 Be sure to remove unused LSPs in `./init.lua`.
 
 > **RECOMMENDED**: Add custom default directories in `./lua/custom/plugins/init.lua`
+
 Dashboard text tables are in `./textblocks.lua`.
 
 ## To be added
