@@ -10,13 +10,19 @@ And he has finally made his own distribution.
 
 ## Version Changelogs
 
-This is the main branch!
+- Overhauled the modularization of plugins
+    - Hopefully this makes configuration even more accessible than previous
+- Removed the need to manage an absolute path with `./textblocks.lua`
+    - It is now within the same module as its depedendent code: `./lua/custom/plugins/dashboard.lua`
+- Removed defaults for the dashboard footers.
 
 ## Installation
 
 > **IMPORTANT**: This repository doubles as my backup for my configuration backup so clone from a stable branch version not the main one!
 
 Refer to *kickstart.nvim*'s installation guide, but replace the GitHub repo with `https://github.com/44mira/tyraelvim.git/tree/<STABLE BRANCH>`
+
+It is *recommended* that you then customize the text pools found in `./lua/custom/plugins/dashboard.lua`.
 
 ## Features
 
@@ -104,3 +110,6 @@ return {
 ```
 
 Be sure to remove unused LSPs in `./init.lua`.
+
+## Features to be added:
+- Theme picker

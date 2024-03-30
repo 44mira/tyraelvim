@@ -4,6 +4,8 @@
 -- Text Pools --
 ----------------
 
+-- Add your headers here. Use [[ ]] Lua rawstrings to preserve spaces.
+-- Each table element is treated as a line, and it is recommended you leave an empty line at the end.
 HEADERS = {
   {
     [[                                                                            ]],
@@ -35,26 +37,14 @@ HEADERS = {
   },
 }
 
+-- Add your footers here as single-line strings.
 FOOTERS = {
-  'Life is like a box of chocolates. Lami makadawat og kisses.',
-  'Gago saon og gawas?',
-  'Sharmaigne. Sharmaigne. Sharmaigne. Sharmaigne. Sharmaigne.',
   'Vim btw.',
-  'Javascript is nice until you have to write Javascript.',
-  'If knowledge is power, and power can control the world; then you are my world.',
-  'If ang bisaya sa nikaon, naka?',
-  'Segmentation fault (core dumped)',
-  'Error at line 69.',
-  'rm -rf /',
-  'public static void main(String args[])',
-  'Trans Rights are Human Rights!',
 }
 
--- Use [[ ]] Lua rawstrings for directories.
+-- Use [[ ]] Lua rawstrings for directories. Invalid directories will NOT show up.
 DIRECTORIES = {
   [[~\.config\nvim]],
-  [[~\Desktop\pandora\ACADEMICS\prac]],
-  [[C:\Users\Legolas\AppData\Roaming\alacritty]],
 }
 
 ------------------------
