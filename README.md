@@ -10,11 +10,7 @@ And he has finally made his own distribution.
 
 ## Version Changelogs
 
-- Overhauled the modularization of plugins
-    - Hopefully this makes configuration even more accessible than previous
-- Removed the need to manage an absolute path with `./textblocks.lua`
-    - It is now within the same module as its depedendent code: `./lua/custom/plugins/dashboard.lua`
-- Removed defaults for the dashboard footers.
+- This is the main branch!
 
 ## Installation
 
