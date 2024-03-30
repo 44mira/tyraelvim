@@ -15,6 +15,7 @@ And he has finally made his own distribution.
 - Removed the need to manage an absolute path with `./textblocks.lua`
     - It is now within the same module as its depedendent code: `./lua/custom/plugins/dashboard.lua`
 - Removed defaults for the dashboard footers.
+- Added a theme module from wherein you can easily modify the theme.
 
 ## Installation
 
@@ -113,5 +114,3 @@ Be sure to remove unused LSPs in `./init.lua`.
 
 > **RECOMMENDED**: Add custom default directories in `./lua/custom/plugins/init.lua`
 
-## Features to be added:
-- Theme picker
