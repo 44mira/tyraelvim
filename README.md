@@ -39,7 +39,6 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
     - HTML `html`
     - CSS `cssls`
     - Rust `rust_analyzer`
-    - Elixir `elixirls` (disabled by default, if it isn't, then disable it. Refer to this [documentation](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#elixirls))
 
 ## Keymappings
 
