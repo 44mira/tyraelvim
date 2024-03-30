@@ -28,9 +28,6 @@ This is the main branch!
 
 Refer to *kickstart.nvim*'s installation guide, but replace the GitHub repo with `https://github.com/44mira/tyraelvim.git/tree/<STABLE BRANCH>`
 
-Then, you need to set the Dashboard's `textblocks.lua` absolute path in `./lua/custom/plugins/init.lua` to match its current path in your installation.
-- I'm currently unaware of a better way to do this, will take suggestions.
-
 ## Features
 
 - File handling using a text buffer *[oil.nvim](https://github.com/stevearc/oil.nvim)*
@@ -100,8 +97,20 @@ bind('n', 'md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own
 
 ## Configuration
 
-Additional plugins may be appended unto `./lua/custom/plugins/init.lua`. This is also where you can configure individual plugin settings
+Additional plugins are added by creating a corresponding `.lua` file in `./lua/custom/plugins/` that returns a Lazy.nvim table.
+- The file names don't have to match the plugins, they just have to be in the directory.
+
+Example:
+
+```lua
+-- ./lua/custom/plugins/oil.lua
+
+return {
+  'stevearc/oil.nvim',
+  opts = {},
+  -- Optional dependencies
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+}
+```
 
 Be sure to remove unused LSPs in `./init.lua`.
-
-Dashboard text tables are in `./textblocks.lua`.
