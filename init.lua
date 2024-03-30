@@ -62,6 +62,7 @@ local servers = {
   rust_analyzer = {},
   tailwindcss = {},
   html = {},
+  elixirls = { cmd = { 'C:\\Users\\Legolas\\Desktop\\pandora\\compilers and interpreters\\elixir-ls-v0.19.0\\language_server.bat' } },
   cssls = {},
 
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
