@@ -28,6 +28,9 @@ This is the main branch!
 
 Refer to *kickstart.nvim*'s installation guide, but replace the GitHub repo with `https://github.com/44mira/tyraelvim.git/tree/<STABLE BRANCH>`
 
+Then, you need to set the Dashboard's `textblocks.lua` absolute path in `./lua/custom/plugins/init.lua` to match its current path in your installation.
+- I'm currently unaware of a better way to do this, will take suggestions.
+
 ## Features
 
 - File tree *[nvimtree](https://github.com/nvim-tree/nvim-tree.lua)*
