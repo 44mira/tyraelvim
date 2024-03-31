@@ -29,7 +29,9 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
 
 ## Features
 
-- File handling using a text buffer *[oil.nvim](https://github.com/stevearc/oil.nvim)*
+- File handling using:
+    - a text buffer *[oil.nvim](https://github.com/stevearc/oil.nvim)*
+    - a file tree *[nvimtree](https://github.com/nvim-tree/nvim-tree.lua)*
 - Tabs *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
 - Customizable dashboard *[dashboard.nvim](https://github.com/MeanderingProgrammer/dashboard.nvim)*
 - Markdown previewing *[markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)*
