@@ -17,6 +17,7 @@ And he has finally made his own distribution.
 - Removed defaults for the dashboard footers.
 - Added a theme module from wherein you can easily modify the theme.
 - Remove `elixir_ls` from dependencies.
+- Re-added `nvimtree` for file tree visualization
 
 ## Installation
 
@@ -111,6 +112,4 @@ return {
 ```
 
 Be sure to remove unused LSPs in `./init.lua`.
-
-> **RECOMMENDED**: Add custom default directories in `./lua/custom/plugins/init.lua`
 
