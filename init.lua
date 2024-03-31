@@ -10,8 +10,7 @@ vim.g.maplocalleader = ' '
 -- shorthand for binding keymap
 local bind = vim.keymap.set
 
--- Toggle the NvimTree
-bind('n', '<leader>n', '<cmd>NvimTreeToggle<CR>', { desc = 'Open [N]vimTree' })
+bind('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', { desc = 'Open Nvim[T]ree' })
 
 -- Open an Oil buffer
 bind('n', '<leader>f', '<cmd>Oil --float<CR>', { desc = 'Open [F]ile explorer buffer' })
@@ -28,6 +27,8 @@ bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 -- Cycle through tabs
 bind('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { desc = '[[] Previous Buffer' })
 bind('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { desc = '[]] Next Buffer' })
+-- bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
+-- bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 
 -- Rearrange tabs
 bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
@@ -36,6 +37,7 @@ bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buf
 -- Jump to tab
 for i = 1, 9 do
   bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+  -- bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
 end
 
 -- Markdown preview

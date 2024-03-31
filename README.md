@@ -10,7 +10,7 @@ And he has finally made his own distribution.
 
 ## Version Changelogs
 
-- This is the main branch!
+- Added `lualine.nvim`
 
 ## Installation
 
@@ -25,7 +25,12 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
 - File handling using:
     - a text buffer *[oil.nvim](https://github.com/stevearc/oil.nvim)*
     - a file tree *[nvimtree](https://github.com/nvim-tree/nvim-tree.lua)*
+<<<<<<< HEAD
 - Tabs *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
+=======
+- Buffers as "tabs" *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
+- Lualine *[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)*
+>>>>>>> stable
 - Customizable dashboard *[dashboard.nvim](https://github.com/MeanderingProgrammer/dashboard.nvim)*
 - Markdown previewing *[markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)*
 - Autoclosing HTML tags *[nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)*
@@ -56,7 +61,11 @@ From `kickstart.nvim`, you can press `<leader>sk` to search for particular keyma
 local bind = vim.keymap.set
 
 -- Toggle the NvimTree
+<<<<<<< HEAD
 bind('n', '<leader>n', '<cmd>NvimTreeToggle<CR>', { desc = 'Open [N]vimTree' })
+=======
+bind('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', { desc = 'Open [N]vimTree' })
+>>>>>>> stable
 
 -- Open an Oil buffer
 bind('n', '<leader>f', '<cmd>Oil --float<CR>', { desc = 'Open [F]ile explorer buffer' })
@@ -73,14 +82,17 @@ bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 -- Cycle through tabs
 bind('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { desc = '[[] Previous Buffer' })
 bind('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { desc = '[]] Next Buffer' })
+-- bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
+-- bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 
 -- Rearrange tabs
 bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
 bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
 
--- Jump to tab (Alt-1 to Alt-9)
+-- Jump to tab
 for i = 1, 9 do
   bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+  -- bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
 end
 
 -- Markdown preview
@@ -107,6 +119,4 @@ return {
 ```
 
 Be sure to remove unused LSPs in `./init.lua`.
-
-> **RECOMMENDED**: Add custom default directories in `./lua/custom/plugins/init.lua`
 
