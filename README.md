@@ -62,8 +62,8 @@ From `kickstart.nvim`, you can press `<leader>sk` to search for particular keyma
 -- shorthand for binding keymap
 local bind = vim.keymap.set
 
--- Toggle the NvimTree (Replaced by oil.nvim)
--- bind('n', '<leader>f', '<cmd>NvimTreeToggle<CR>', { desc = 'Open [F]ile Tree' })
+-- Toggle the NvimTree
+bind('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', { desc = 'Open [N]vimTree' })
 
 -- Open an Oil buffer
 bind('n', '<leader>f', '<cmd>Oil --float<CR>', { desc = 'Open [F]ile explorer buffer' })
