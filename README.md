@@ -30,7 +30,6 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
 =======
 - Buffers as "tabs" *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
 - Lualine *[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)*
->>>>>>> stable
 - Customizable dashboard *[dashboard.nvim](https://github.com/MeanderingProgrammer/dashboard.nvim)*
 - Markdown previewing *[markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)*
 - Autoclosing HTML tags *[nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)*
