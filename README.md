@@ -10,14 +10,7 @@ And he has finally made his own distribution.
 
 ## Version Changelogs
 
-- Overhauled the modularization of plugins
-    - Hopefully this makes configuration even more accessible than previous
-- Removed the need to manage an absolute path with `./textblocks.lua`
-    - It is now within the same module as its depedendent code: `./lua/custom/plugins/dashboard.lua`
-- Removed defaults for the dashboard footers.
-- Added a theme module from wherein you can easily modify the theme.
-- Remove `elixir_ls` from dependencies.
-- Re-added `nvimtree` for file tree visualization
+- Added `lualine.nvim`
 
 ## Installation
 
@@ -32,7 +25,8 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
 - File handling using:
     - a text buffer *[oil.nvim](https://github.com/stevearc/oil.nvim)*
     - a file tree *[nvimtree](https://github.com/nvim-tree/nvim-tree.lua)*
-- Tabs *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
+- Buffers as "tabs" *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
+- Lualine *[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)*
 - Customizable dashboard *[dashboard.nvim](https://github.com/MeanderingProgrammer/dashboard.nvim)*
 - Markdown previewing *[markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)*
 - Autoclosing HTML tags *[nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)*
@@ -80,14 +74,17 @@ bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 -- Cycle through tabs
 bind('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { desc = '[[] Previous Buffer' })
 bind('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { desc = '[]] Next Buffer' })
+-- bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
+-- bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 
 -- Rearrange tabs
 bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
 bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
 
--- Jump to tab (Alt-1 to Alt-9)
+-- Jump to tab
 for i = 1, 9 do
   bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+  -- bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
 end
 
 -- Markdown preview
