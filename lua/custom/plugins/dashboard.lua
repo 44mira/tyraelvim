@@ -56,8 +56,9 @@ FOOTERS = {
 -- Use [[ ]] Lua rawstrings for directories. Invalid directories will NOT show up.
 DIRECTORIES = {
   [[~\.config\nvim]],
-  [[~\Desktop\pandora\ACADEMICS\prac]],
-  [[C:\Users\Legolas\AppData\Roaming\alacritty]],
+  [[~\.config\alacritty]],
+  [[~\.config\tmux]],
+  [[~\]],
 }
 
 ------------------------

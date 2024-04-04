@@ -6,18 +6,18 @@ return {
       lualine_b = { 'branch' },
       lualine_x = { 'diff', 'diagnostics', 'filetype' },
     },
-    -- tabline = {
-    --   lualine_a = {
-    --     {
-    --       'buffers',
-    --       mode = 2,
-    --     },
-    --   },
-    --   lualine_z = { 'tabs' },
-    -- },
-    -- extensions = {
-    --   'nvim-tree',
-    --   'oil',
-    -- },
+    tabline = {
+      lualine_a = {
+        {
+          'buffers',
+          mode = 2,
+        },
+      },
+      lualine_z = { 'tabs' },
+    },
+    extensions = {
+      'nvim-tree',
+      'oil',
+    },
   },
 }
