@@ -11,6 +11,8 @@ And he has finally made his own distribution.
 ## Version Changelogs
 
 - Added `lualine.nvim`
+- Added `codesnap.nvim`
+- Added `vim-tmux-navigator`
 
 ## Installation
 
@@ -26,6 +28,8 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
     - a text buffer *[oil.nvim](https://github.com/stevearc/oil.nvim)*
     - a file tree *[nvimtree](https://github.com/nvim-tree/nvim-tree.lua)*
 - Tabs *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
+- Seamless navigation with Tmux *[vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)*
+- Beautiful code snippet screenshots *[codesnap.nvim](https://github.com/mistricky/codesnap.nvim)*
 - Buffers as "tabs" *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
 - Lualine *[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)*
 - Customizable dashboard *[dashboard.nvim](https://github.com/MeanderingProgrammer/dashboard.nvim)*
