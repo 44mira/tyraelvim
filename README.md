@@ -61,14 +61,14 @@ From `kickstart.nvim`, you can press `<leader>sk` to search for particular keyma
 -- shorthand for binding keymap
 local bind = vim.keymap.set
 
--- Toggle the NvimTree
 bind('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', { desc = 'Open Nvim[T]ree' })
 
 -- Open an Oil buffer
 bind('n', '<leader>f', '<cmd>Oil --float<CR>', { desc = 'Open [F]ile explorer buffer' })
 
 -- Toggle lines for indented
-bind('n', '<leader>i', '<cmd>IBLToggle<CR>', { desc = 'Toggle [I]ndent Blank Line' })
+bind('n', '<leader>i', '<cmd>IBLEnable | set cc=80<CR>', { desc = 'Enable Indent Blank Line' })
+bind('n', '<leader>j', '<cmd>IBLDisable | set cc=0<CR>', { desc = 'Disable Indent Blank Line' })
 
 -- Additional normal bind shortcut for ergonomics
 bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
@@ -77,23 +77,26 @@ bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
 bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 
 -- Cycle through tabs
-bind('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { desc = '[[] Previous Buffer' })
-bind('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { desc = '[]] Next Buffer' })
--- bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
--- bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
+-- bind('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { desc = '[[] Previous Buffer' })
+-- bind('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { desc = '[]] Next Buffer' })
+bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
+bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 
 -- Rearrange tabs
-bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
-bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
+-- bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
+-- bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
 
 -- Jump to tab
 for i = 1, 9 do
-  bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
-  -- bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+  -- bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+  bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
 end
 
 -- Markdown preview
-bind('n', 'md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own' })
+bind('n', '<leader>md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own' })
+
+-- Note taking
+bind('n', '<leader>nb', '<cmd>:enew<CR>', { desc = '[New] Buffer' })
 ```
 </details>
 

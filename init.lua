@@ -16,7 +16,8 @@ bind('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', { desc = 'Open Nvim[T]ree' })
 bind('n', '<leader>f', '<cmd>Oil --float<CR>', { desc = 'Open [F]ile explorer buffer' })
 
 -- Toggle lines for indented
-bind('n', '<leader>i', '<cmd>IBLToggle<CR>', { desc = 'Toggle [I]ndent Blank Line' })
+bind('n', '<leader>i', '<cmd>IBLEnable | set cc=80<CR>', { desc = 'Enable Indent Blank Line' })
+bind('n', '<leader>j', '<cmd>IBLDisable | set cc=0<CR>', { desc = 'Disable Indent Blank Line' })
 
 -- Additional normal bind shortcut for ergonomics
 bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
@@ -41,7 +42,10 @@ for i = 1, 9 do
 end
 
 -- Markdown preview
-bind('n', 'md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own' })
+bind('n', '<leader>md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own' })
+
+-- Note taking
+bind('n', '<leader>nb', '<cmd>:enew<CR>', { desc = '[New] Buffer' })
 
 -- Optional Racket Lambda bind
 -- bind('n', '<leader>l', 'iλ<Esc>', { desc = 'Insert Lambda' })
@@ -121,7 +125,6 @@ vim.opt.relativenumber = true
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
