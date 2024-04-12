@@ -5,8 +5,11 @@ return {
     -- See `:help ibl`
     main = 'ibl',
     opts = {
+			scope = {
+				show_start = false,
+				show_end = false,
+			},
       enabled = false,
-
       indent = {
         char = '┊',
       },
