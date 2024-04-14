@@ -26,19 +26,19 @@ bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
 bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 
 -- Cycle through tabs
--- bind('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { desc = '[[] Previous Buffer' })
--- bind('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { desc = '[]] Next Buffer' })
-bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
-bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
+bind('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { desc = '[[] Previous Buffer' })
+bind('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { desc = '[]] Next Buffer' })
+-- bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
+-- bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 
 -- Rearrange tabs
--- bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
--- bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
+bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
+bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
 
 -- Jump to tab
 for i = 1, 9 do
-  -- bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
-  bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+  bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+  -- bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
 end
 
 -- Markdown preview
@@ -68,7 +68,9 @@ local servers = {
   rust_analyzer = {},
   tailwindcss = {},
   html = {},
-  elixirls = {},
+  elixirls = {
+    cmd = { '/home/if-els/Documents/coding/auxiliaries/elixir-ls-v0.20.0/language_server.sh' },
+  },
   cssls = {},
   emmet_language_server = {},
 
@@ -125,6 +127,7 @@ vim.opt.relativenumber = true
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -235,7 +238,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 
 require('lazy').setup {
-  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   { 'numToStr/Comment.nvim', opts = {} },
   -- Here is a more advanced example where we pass configuration
@@ -544,6 +547,9 @@ require('lazy').setup {
 
   { -- Autoformat
     'stevearc/conform.nvim',
+    init = function()
+      vim.o.formatexpr = [[v:lua.require("conform").formatexpr()]]
+    end,
     opts = {
       notify_on_error = false,
       format_on_save = {
@@ -559,6 +565,7 @@ require('lazy').setup {
         -- is found.
         javascript = { { 'prettierd', 'prettier' } },
         typescript = { { 'prettierd', 'prettier' } },
+        typescriptreact = { 'prettierd' },
       },
     },
   },
