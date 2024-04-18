@@ -10,7 +10,7 @@ vim.g.maplocalleader = ' '
 -- shorthand for binding keymap
 local bind = vim.keymap.set
 
-bind('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', { desc = 'Open Nvim[T]ree' })
+bind('n', '<leader>t', '<cmd>Neotree filesystem reveal right<CR>', { desc = 'Open Neo[T]ree' })
 
 -- Open an Oil buffer
 bind('n', '<leader>f', '<cmd>Oil<CR>', { desc = 'Open [F]ile explorer buffer' })
@@ -72,7 +72,7 @@ local servers = {
     cmd = { '/home/if-els/Documents/coding/auxiliaries/elixir-ls-v0.20.0/language_server.sh' },
   },
   cssls = {},
-  emmet_language_server = {},
+  -- emmet_language_server = {},
 
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
   --
@@ -364,7 +364,9 @@ require('lazy').setup {
       local builtin = require 'telescope.builtin'
       bind('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       bind('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-      bind('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+      bind('n', '<leader>sf', function()
+        builtin.find_files { hidden = true }
+      end, { desc = '[S]earch [F]iles' })
       bind('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       bind('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       bind('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
@@ -547,14 +549,11 @@ require('lazy').setup {
 
   { -- Autoformat
     'stevearc/conform.nvim',
-    init = function()
-      vim.o.formatexpr = [[v:lua.require("conform").formatexpr()]]
-    end,
     opts = {
       notify_on_error = false,
       format_on_save = {
         timeout_ms = 500,
-        lsp_fallback = false,
+        lsp_fallback = true,
       },
       formatters_by_ft = {
         lua = { 'stylua' },
@@ -565,7 +564,8 @@ require('lazy').setup {
         -- is found.
         javascript = { { 'prettierd', 'prettier' } },
         typescript = { { 'prettierd', 'prettier' } },
-        typescriptreact = { 'prettierd' },
+        typescriptreact = { { 'prettierd', 'prettier' } },
+        json = { { 'prettierd', 'prettier' } },
       },
     },
   },
@@ -599,7 +599,7 @@ require('lazy').setup {
       --    you can use this plugin to help you. It even has snippets
       --    for various frameworks/libraries/etc. but you will have to
       --    set up the ones that are useful for you.
-      -- 'rafamadriz/friendly-snippets',
+      'rafamadriz/friendly-snippets',
     },
     config = function()
       -- See `:help cmp`
