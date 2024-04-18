@@ -26,7 +26,7 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
 
 - File handling using:
     - a text buffer *[oil.nvim](https://github.com/stevearc/oil.nvim)*
-    - a file tree *[nvimtree](https://github.com/nvim-tree/nvim-tree.lua)*
+    - a file tree *[neotree](https://github.com/nvim-neo-tree/neo-tree.nvim)*
 - Tabs *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
 - Seamless navigation with Tmux *[vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)*
 - Beautiful code snippet screenshots *[codesnap.nvim](https://github.com/mistricky/codesnap.nvim)*
@@ -61,7 +61,7 @@ From `kickstart.nvim`, you can press `<leader>sk` to search for particular keyma
 -- shorthand for binding keymap
 local bind = vim.keymap.set
 
-bind('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', { desc = 'Open Nvim[T]ree' })
+bind('n', '<leader>t', '<cmd>Neotree filesystem reveal right<CR>', { desc = 'Open Neo[T]ree' })
 
 -- Open an Oil buffer
 bind('n', '<leader>f', '<cmd>Oil<CR>', { desc = 'Open [F]ile explorer buffer' })
