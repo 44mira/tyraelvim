@@ -10,7 +10,7 @@ vim.g.maplocalleader = ' '
 -- shorthand for binding keymap
 local bind = vim.keymap.set
 
-bind('n', '<leader>t', '<cmd>Neotree filesystem reveal right<CR>', { desc = 'Open Neo[T]ree' })
+bind('n', '<leader>t', '<cmd>Neotree toggle reveal<CR>', { desc = 'Open Neo[T]ree' })
 
 -- Open an Oil buffer
 bind('n', '<leader>f', '<cmd>Oil<CR>', { desc = 'Open [F]ile explorer buffer' })
@@ -42,7 +42,7 @@ for i = 1, 9 do
 end
 
 -- Markdown preview
-bind('n', '<leader>md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Preview [M]ark[d]own' })
+bind('n', '<leader>pm', '<cmd>MarkdownPreviewToggle<CR>', { desc = '[P]review [M]arkdown' })
 
 -- Note taking
 bind('n', '<leader>nb', '<cmd>:enew<CR>', { desc = '[New] Buffer' })
