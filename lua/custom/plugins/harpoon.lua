@@ -19,14 +19,14 @@ return {
     bind('n', '<leader>sm', '<cmd>Telescope harpoon marks<CR>', { desc = '[S]earch [M]arks' })
 
     -- Scroll through marks
-    bind('n', '<leader><M-j>', require('harpoon.ui').nav_prev, { desc = 'Jump to previous mark' })
-    bind('n', '<leader><M-k>', require('harpoon.ui').nav_next, { desc = 'Jump to next mark' })
+    bind('n', '<leader>wj', require('harpoon.ui').nav_prev, { desc = '[W]arp to previous mark' })
+    bind('n', '<leader>wk', require('harpoon.ui').nav_next, { desc = '[W]arp to next mark' })
 
     -- Jump through marks like tabs
     for i = 1, 9 do
-      bind('n', ('<leader><M-%d>'):format(i), function()
+      bind('n', ('<leader>w%d'):format(i), function()
         require('harpoon.ui').nav_file(i)
-      end, { desc = ('Jump to mark [%d]'):format(i) })
+      end, { desc = ('Warp to mark %d'):format(i) })
     end
   end,
 }

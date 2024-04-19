@@ -10,6 +10,7 @@ vim.g.maplocalleader = ' '
 -- shorthand for binding keymap
 local bind = vim.keymap.set
 
+-- Open File tree
 bind('n', '<leader>t', '<cmd>Neotree toggle reveal<CR>', { desc = 'Open Neo[T]ree' })
 
 -- Open an Oil buffer
@@ -45,7 +46,7 @@ end
 bind('n', '<leader>pm', '<cmd>MarkdownPreviewToggle<CR>', { desc = '[P]review [M]arkdown' })
 
 -- Note taking
-bind('n', '<leader>nb', '<cmd>:enew<CR>', { desc = '[New] Buffer' })
+bind('n', '<leader>nb', '<cmd>:enew<CR>', { desc = '[N]ew [B]uffer' })
 
 -- Optional Racket Lambda bind
 -- bind('n', '<leader>l', 'iλ<Esc>', { desc = 'Insert Lambda' })
