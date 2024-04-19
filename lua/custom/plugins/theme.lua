@@ -6,13 +6,14 @@ return {
 
   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
 
-  'sainnhe/gruvbox-material',
+  'ayu-theme/ayu-vim',
   lazy = false, -- make sure we load this during startup if it is your main colorscheme
   priority = 1000, -- make sure to load this before all the other start plugins
   config = function()
     -- Load the colorscheme and options here
 
-    vim.cmd 'let g:gruvbox_material_background = "hard"'
-    vim.cmd.colorscheme 'gruvbox-material'
+    vim.cmd.colorscheme 'ayu'
+    vim.cmd.highlight 'clear SignColumn'
+    vim.opt.fillchars = { eob = ' ' }
   end,
 }
