@@ -58,6 +58,7 @@ DIRECTORIES = {
   [[~\.config\nvim]],
   [[~\.config\alacritty]],
   [[~\.config\tmux]],
+  [[~\.config\sway\]],
   [[~\]],
 }
 

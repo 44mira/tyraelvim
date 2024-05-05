@@ -82,6 +82,9 @@ local servers = {
   --
   -- But for many setups, the LSP (`tsserver`) will work just fine
   tsserver = {},
+  volar = {},
+  jdtls = {},
+  gopls = {},
 
   lua_ls = {
     -- cmd = {...},
@@ -114,7 +117,6 @@ local servers = {
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
 -- [[ Setting options ]]
@@ -165,8 +167,8 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', nbsp = '␣' }
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = '» ', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -175,7 +177,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 4
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -239,7 +241,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 
 require('lazy').setup {
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   { 'numToStr/Comment.nvim', opts = {} },
   -- Here is a more advanced example where we pass configuration
@@ -558,7 +560,6 @@ require('lazy').setup {
       },
       formatters_by_ft = {
         lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
         python = { 'black' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
@@ -567,6 +568,8 @@ require('lazy').setup {
         typescript = { { 'prettierd', 'prettier' } },
         typescriptreact = { { 'prettierd', 'prettier' } },
         json = { { 'prettierd', 'prettier' } },
+        html = { { 'prettierd', 'prettier' } },
+        vue = { { 'prettierd', 'prettier' } },
       },
     },
   },
