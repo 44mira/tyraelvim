@@ -351,7 +351,6 @@ require('lazy').setup {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
         pickers = {
           find_files = {
             hidden = true,
@@ -374,9 +373,6 @@ require('lazy').setup {
       local builtin = require 'telescope.builtin'
       bind('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       bind('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-      bind('n', '<leader>sf', function()
-        builtin.find_files { hidden = true }
-      end, { desc = '[S]earch [F]iles' })
       bind('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       bind('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       bind('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
