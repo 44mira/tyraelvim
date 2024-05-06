@@ -352,6 +352,13 @@ require('lazy').setup {
         --   },
         -- },
         -- pickers = {}
+        pickers = {
+          find_files = {
+            hidden = true,
+            no_ignore = true,
+            follow = true,
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -370,6 +377,7 @@ require('lazy').setup {
       bind('n', '<leader>sf', function()
         builtin.find_files { hidden = true }
       end, { desc = '[S]earch [F]iles' })
+      bind('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       bind('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       bind('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       bind('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
