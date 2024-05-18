@@ -10,7 +10,11 @@ And he has finally made his own distribution.
 
 ## Version Changelogs
 
-- Added `harpoon`
+- Deprecate `bufferline.nvim` tabs in favor of minimalist `lualine` tabs.
+- Add `neoscroll` for smooth scrolling animation.
+- Add `output-panel` for debugging LSP.
+- Add `lazygit.nvim` integration.
+- Add 2 themes `rose-pine` and `tokyonight` to choose from as defaults.
 
 ## Installation
 
@@ -28,7 +32,6 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
 - Tabs *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
 - Seamless navigation with Tmux *[vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)*
 - Beautiful code snippet screenshots *[codesnap.nvim](https://github.com/mistricky/codesnap.nvim)*
-- Buffers as "tabs" *[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)*
 - Lualine *[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)*
 - Customizable dashboard *[dashboard.nvim](https://github.com/MeanderingProgrammer/dashboard.nvim)*
 - Markdown previewing *[markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)*
@@ -37,7 +40,8 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
 - Toggleable lines for indentation *[indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)*
 - Blazingly fast project traversal using marks *[harpoon](https://github.com/ThePrimeagen/harpoon)*
 - Supplementary keymappings
-- Ships with Language Server Protocols
+- Ships with Language Server Protocols (Make sure you have their dependencies
+  installed)
     - C/C++ `clangd`
     - Python `pyright`
     - Lua `lua_ls`
