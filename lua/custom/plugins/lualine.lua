@@ -11,17 +11,18 @@ return {
       lualine_x = { 'diff', 'diagnostics', 'filetype' },
       lualine_z = { lualine_name },
     },
-    -- tabline = {
-    --   lualine_a = {
-    --     {
-    --       'buffers',
-    --       mode = 2,
-    --     },
-    --   },
-    --   lualine_z = { 'tabs' },
-    -- },
+    tabline = {
+      lualine_a = {
+        {
+          'buffers',
+          mode = 1,
+        },
+      },
+      lualine_z = { 'tabs' },
+    },
     extensions = {
-      'nvim-tree',
+      'lazy',
+      'neo-tree',
       'oil',
     },
   },

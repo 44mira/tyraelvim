@@ -27,19 +27,19 @@ bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
 bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 
 -- Cycle through tabs
-bind('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { desc = '[[] Previous Buffer' })
-bind('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { desc = '[]] Next Buffer' })
--- bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
--- bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
+-- bind('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { desc = '[[] Previous Buffer' })
+-- bind('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { desc = '[]] Next Buffer' })
+bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
+bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 
 -- Rearrange tabs
-bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
-bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
-
+-- bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
+-- bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
+--
 -- Jump to tab
 for i = 1, 9 do
-  bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
-  -- bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+  -- bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+  bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
 end
 
 -- Markdown preview
@@ -70,7 +70,7 @@ local servers = {
   tailwindcss = {},
   html = {},
   elixirls = {
-    cmd = { '/home/if-els/Documents/coding/auxiliaries/elixir-ls-v0.20.0/language_server.sh' },
+    cmd = { '/home/tyrael/Documents/coding/aux/elixir-ls-v0.21.1/language_server.sh' },
   },
   cssls = {},
   -- emmet_language_server = {},
@@ -82,9 +82,9 @@ local servers = {
   --
   -- But for many setups, the LSP (`tsserver`) will work just fine
   tsserver = {},
-  volar = {},
   jdtls = {},
   gopls = {},
+  bashls = {},
 
   lua_ls = {
     -- cmd = {...},
@@ -573,7 +573,7 @@ require('lazy').setup {
         typescriptreact = { { 'prettierd', 'prettier' } },
         json = { { 'prettierd', 'prettier' } },
         html = { { 'prettierd', 'prettier' } },
-        vue = { { 'prettierd', 'prettier' } },
+        bash = { 'shfmt' },
       },
     },
   },
@@ -726,7 +726,7 @@ require('lazy').setup {
 
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'python', 'javascript' },
+        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'python', 'javascript', 'elixir' },
         -- Autoinstall languages that are not installed
         auto_install = true,
         highlight = { enable = true },
@@ -741,7 +741,5 @@ require('lazy').setup {
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
-
-  require 'kickstart.plugins.indent_line',
   { import = 'custom.plugins' },
 }
