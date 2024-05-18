@@ -6,9 +6,9 @@ return {
   opts = {
     mac_window_bar = false,
     has_breadcrumbs = true,
-    code_font_family = 'SpaceMono Nerd Font Mono',
-    watermark_font_family = 'ZedMono NFM',
-    bg_theme = 'bamboo',
+    code_font_family = 'JetBrainsMono Nerd Font',
+    watermark_font_family = ' MartianMono Nerd Font Mono',
+    bg_theme = 'grape',
     watermark = '',
   },
 }

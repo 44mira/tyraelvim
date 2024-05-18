@@ -56,10 +56,10 @@ FOOTERS = {
 -- Use [[ ]] Lua rawstrings for directories. Invalid directories will NOT show up.
 DIRECTORIES = {
   [[~\.config\nvim]],
-  [[~\.config\alacritty]],
+  [[~\.config\kitty]],
+  [[~\.config\hypr]],
   [[~\.config\tmux]],
-  [[~\.config\sway\]],
-  [[~\]],
+  [[~\.config]],
 }
 
 ------------------------
