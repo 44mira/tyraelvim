@@ -24,9 +24,9 @@ return {
 
     -- Jump through marks like tabs
     for i = 1, 9 do
-      bind('n', ('<leader>w%d'):format(i), function()
+      bind('n', ('<M-%d>'):format(i), function()
         require('harpoon.ui').nav_file(i)
-      end, { desc = ('Warp to mark %d'):format(i) })
+      end, { desc = ('Jump to mark %d'):format(i) })
     end
   end,
 }
