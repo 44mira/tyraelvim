@@ -37,10 +37,10 @@ bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 -- bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
 --
 -- Jump to tab
-for i = 1, 9 do
-  -- bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
-  bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
-end
+-- for i = 1, 9 do
+--   -- bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+--   bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
+-- end
 
 -- Markdown preview
 bind('n', '<leader>pm', '<cmd>MarkdownPreviewToggle<CR>', { desc = '[P]review [M]arkdown' })
