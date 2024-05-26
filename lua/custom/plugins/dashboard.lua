@@ -55,11 +55,11 @@ FOOTERS = {
 
 -- Use [[ ]] Lua rawstrings for directories. Invalid directories will NOT show up.
 DIRECTORIES = {
-  [[~\.config\nvim]],
-  [[~\.config\kitty]],
-  [[~\.config\hypr]],
-  [[~\.config\tmux]],
-  [[~\.config]],
+  [[~/.config/nvim]],
+  [[~/.config/kitty]],
+  [[~/.config/hypr]],
+  [[~/.config/tmux]],
+  [[~/.config]],
 }
 
 ------------------------
@@ -80,7 +80,7 @@ end
 -- Plugin Settings --
 ---------------------
 
-local dashboard_plugin = {
+return {
   'MeanderingProgrammer/dashboard.nvim',
   event = 'VimEnter',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -89,13 +89,10 @@ local dashboard_plugin = {
     directories = DIRECTORIES,
     footer = { footer() },
     highlight_groups = {
-      header = 'bufferLineCurrent',
+      header = 'Conditional',
       icon = 'bufferLineCurrent',
-      directory = 'jsParen',
+      directory = 'Number',
       hotkey = 'AerialOperatorIcon',
-      footer = 'jsParen',
     },
   },
 }
-
-return dashboard_plugin
