@@ -1,15 +1,19 @@
 -- You can easily change to a different colorscheme.
 
 return {
-  lazy = false,
-  priority = 1000,
-  config = function()
-    -- vim.cmd.colorscheme 'rose-pine'
-    vim.cmd.colorscheme 'tokyonight-night'
-    vim.cmd.highlight 'clear SignColumn'
-    vim.opt.fillchars = { eob = ' ' }
-  end,
+  {
+    -- 'folke/tokyonight.nvim',
+    -- 'sainnhe/gruvbox-material',
+    'rose-pine/neovim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_enable_bold = true
 
-  -- 'rose-pine/neovim',
-  'folke/tokyonight.nvim',
+      vim.cmd.colorscheme 'rose-pine'
+
+      vim.opt.fillchars = { eob = ' ' }
+    end,
+  },
 }
