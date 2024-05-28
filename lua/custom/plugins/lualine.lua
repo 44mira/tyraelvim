@@ -1,5 +1,5 @@
 local function lualine_name()
-  return [[sharmaigne  ]]
+  return [[tyraelvim  ]]
 end
 
 local aerial = {
