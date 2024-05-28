@@ -80,6 +80,11 @@ end
 -- Plugin Settings --
 ---------------------
 
+-- disable on kitty-scrollback
+if vim.env.KITTY_SCROLLBACK_NVIM == 'true' then
+  return {}
+end
+
 return {
   'MeanderingProgrammer/dashboard.nvim',
   event = 'VimEnter',
