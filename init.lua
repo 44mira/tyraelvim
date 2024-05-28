@@ -27,20 +27,8 @@ bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
 bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 
 -- Cycle through tabs
--- bind('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { desc = '[[] Previous Buffer' })
--- bind('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { desc = '[]] Next Buffer' })
 bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
 bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
-
--- Rearrange tabs
--- bind('n', '<leader>}', '<cmd>BufferLineMoveNext<CR>', { desc = '[}] Forward Buffer' })
--- bind('n', '<leader>{', '<cmd>BufferLineMovePrev<CR>', { desc = '[{] Backward Buffer' })
---
--- Jump to tab
--- for i = 1, 9 do
---   -- bind('n', ('<M-%d>'):format(i), ('<cmd>BufferLineGoToBuffer %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
---   bind('n', ('<M-%d>'):format(i), ('<cmd>LualineBuffersJump! %d<CR>'):format(i), { desc = ('Go to Buffer [%d]'):format(i) })
--- end
 
 -- Markdown preview
 bind('n', '<leader>pm', '<cmd>MarkdownPreviewToggle<CR>', { desc = '[P]review [M]arkdown' })
@@ -362,12 +350,21 @@ require('lazy').setup {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },
+          aerial = {
+            -- Display symbols as <root>.<parent>.<symbol>
+            show_nesting = {
+              ['_'] = false, -- This key will be the default
+              json = true, -- You can set the option for specific filetypes
+              yaml = true,
+            },
+          },
         },
       }
 
       -- Enable telescope extensions, if they are installed
-      pcall(require('telescope').load_extension, 'fzf')
-      pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('telescope').load_extension 'fzf')
+      pcall(require('telescope').load_extension 'ui-select')
+      pcall(require('telescope').load_extension 'aerial')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -381,13 +378,14 @@ require('lazy').setup {
       bind('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       bind('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       bind('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      bind('n', '<leader>sa', '<cmd>Telescope aerial<CR>', { desc = '[S]earch [A]erial' })
 
       -- Slightly advanced example of overriding default behavior and theme
       bind('n', '<leader>/', function()
         -- You can pass additional configuration to telescope to change theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
           winblend = 10,
-          previewer = false,
+          previewer = true,
         })
       end, { desc = '[/] Fuzzily search in current buffer' })
 
