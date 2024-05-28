@@ -52,15 +52,18 @@ bind('n', '<leader>nb', '<cmd>:enew<CR>', { desc = '[N]ew [B]uffer' })
 --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 
 local servers = {
-  clangd = {},
-  pyright = {},
-  rust_analyzer = {},
-  tailwindcss = {},
-  html = {},
-  elixirls = {
-    cmd = { '/home/tyrael/Documents/coding/aux/elixir-ls-v0.21.1/language_server.sh' },
-  },
-  cssls = {},
+  -- clangd = {},
+  -- pyright = {},
+  -- rust_analyzer = {},
+  -- tailwindcss = {},
+  -- html = {},
+  -- cssls = {},
+  -- tsserver = {},
+
+  -- jdtls = {},
+  -- gopls = {},
+  -- bashls = {},
+
   -- emmet_language_server = {},
 
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -69,10 +72,6 @@ local servers = {
   --    https://github.com/pmizio/typescript-tools.nvim
   --
   -- But for many setups, the LSP (`tsserver`) will work just fine
-  tsserver = {},
-  jdtls = {},
-  gopls = {},
-  bashls = {},
 
   lua_ls = {
     -- cmd = {...},
