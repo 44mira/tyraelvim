@@ -4,7 +4,7 @@
 > This Neovim configuration is based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 > Refer there for features not covered in this documentation.
 
-![image](https://github.com/44mira/tyraelvim/assets/116419708/5497aaab-46bf-49e0-9a4c-42d51b78d6d3)
+![image](https://github.com/44mira/tyraelvim/assets/116419708/e3e575d5-bc57-4f3d-9b1d-640e28fd75da)
     
 And he has finally made his own distribution.
 
