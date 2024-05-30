@@ -10,14 +10,8 @@ And he has finally made his own distribution.
 
 ## Version Changelogs
 
-- Remove tabs 
-- Add `catppuccin` as a default theme.
-- Add `headlines.nvim`
-- Add `copilot.lua` for Copilot integration
-    - Add `lualine-copilot` for icon
-- Add `aerial.nvim`
-    - With Telescope integration
-- Add `vim-kitty-scrollback`
+- Replace `codesnap.nvim` with `silicon.nvim`
+- Minor `catppuccin` configuration added
 
 ## Installation
 
@@ -33,7 +27,7 @@ It is *recommended* that you then customize the text pools found in `./lua/custo
     - a text buffer *[oil.nvim](https://github.com/stevearc/oil.nvim)*
     - a file tree *[neotree](https://github.com/nvim-neo-tree/neo-tree.nvim)*
 - Seamless navigation with Tmux *[vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)*
-- Beautiful code snippet screenshots *[codesnap.nvim](https://github.com/mistricky/codesnap.nvim)*
+- Beautiful code snippet snapshots *[silicon.nvim](https://github.com/michaelrommel/nvim-silicon)*
 - Lualine *[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)*
 - Customizable dashboard *[dashboard.nvim](https://github.com/MeanderingProgrammer/dashboard.nvim)*
 - Extensive markdown support
@@ -67,6 +61,8 @@ From `kickstart.nvim`, you can press `<leader>sk` to search for particular keyma
 
 ```lua
 -- ./init.lua
+-- shorthand for binding keymap
+local bind = vim.keymap.set
 
 -- Open File tree
 bind('n', '<leader>t', '<cmd>Neotree toggle reveal<CR>', { desc = 'Open Neo[T]ree' })
@@ -87,6 +83,9 @@ bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 -- Cycle through tabs
 bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
 bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
+
+-- Select mode code snippet
+bind('v', '<leader><leader>', ':Silicon<cr>', { desc = '[ ][ ] Take code snapshot' })
 
 -- Markdown preview
 bind('n', '<leader>pm', '<cmd>MarkdownPreviewToggle<CR>', { desc = '[P]review [M]arkdown' })
