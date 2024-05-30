@@ -30,6 +30,9 @@ bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
 bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 
+-- Select mode code snippet
+bind('v', '<leader><leader>', ':Silicon<cr>', { desc = '[ ][ ] Take code snapshot' })
+
 -- Markdown preview
 bind('n', '<leader>pm', '<cmd>MarkdownPreviewToggle<CR>', { desc = '[P]review [M]arkdown' })
 
