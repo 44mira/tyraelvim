@@ -39,17 +39,7 @@ HEADERS = {
 
 -- Add your footers here as single-line strings.
 FOOTERS = {
-  'Life is like a box of chocolates. Lami makadawat og kisses.',
-  'Also try Terraria!',
-  'Gago saon og gawas?',
-  'Sharmaigne. Sharmaigne. Sharmaigne. Sharmaigne. Sharmaigne.',
   'Vim btw.',
-  'Javascript is nice until you have to write Javascript.',
-  'If ang bisaya sa nikaon, naka?',
-  'Segmentation fault (core dumped)',
-  'Error at line 69.',
-  'rm -rf /',
-  'public static void main(String args[])',
   'Trans Rights are Human Rights!',
 }
 
@@ -57,8 +47,6 @@ FOOTERS = {
 DIRECTORIES = {
   [[~/.config/nvim]],
   [[~/.config/kitty]],
-  [[~/.config/hypr]],
-  [[~/.config/tmux]],
   [[~/.config]],
 }
 

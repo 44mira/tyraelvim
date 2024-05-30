@@ -57,13 +57,10 @@ bind('n', '<leader>nb', '<cmd>:enew<CR>', { desc = '[N]ew [B]uffer' })
 local servers = {
   clangd = {},
   pyright = {},
-  rust_analyzer = {},
-  tailwindcss = {},
-  html = {},
-  elixirls = {
-    cmd = { '/home/tyrael/Documents/coding/aux/elixir-ls-v0.21.1/language_server.sh' },
-  },
-  cssls = {},
+  -- rust_analyzer = {},
+  -- tailwindcss = {},
+  -- html = {},
+  -- cssls = {},
   -- emmet_language_server = {},
 
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -73,10 +70,10 @@ local servers = {
   --
   -- But for many setups, the LSP (`tsserver`) will work just fine
   tsserver = {},
-  jdtls = {},
-  gopls = {},
-  bashls = {},
-  lemminx = {},
+  -- jdtls = {},
+  -- gopls = {},
+  -- bashls = {},
+  -- lemminx = {},
 
   lua_ls = {
     -- cmd = {...},
@@ -575,8 +572,8 @@ require('lazy').setup {
         typescriptreact = { { 'prettierd', 'prettier' } },
         json = { { 'prettierd', 'prettier' } },
         html = { { 'prettierd', 'prettier' } },
-        bash = { 'shfmt' },
-        xml = { 'xmlformatter' },
+        -- bash = { 'shfmt' },
+        -- xml = { 'xmlformatter' },
       },
     },
   },
