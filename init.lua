@@ -76,6 +76,7 @@ local servers = {
   jdtls = {},
   gopls = {},
   bashls = {},
+  lemminx = {},
 
   lua_ls = {
     -- cmd = {...},
@@ -575,6 +576,7 @@ require('lazy').setup {
         json = { { 'prettierd', 'prettier' } },
         html = { { 'prettierd', 'prettier' } },
         bash = { 'shfmt' },
+        xml = { 'xmlformatter' },
       },
     },
   },
