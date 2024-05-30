@@ -21,6 +21,7 @@ local catppuccin = {
         cmp = true,
         gitsigns = true,
         harpoon = true,
+        headlines = true,
         aerial = true,
         mason = true,
         neotree = true,
