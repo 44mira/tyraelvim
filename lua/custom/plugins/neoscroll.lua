@@ -3,7 +3,7 @@ return {
 
   config = function()
     require('neoscroll').setup {
-      easing = 'cubic',
+      easing = 'quadratic',
       hide_cursor = true,
     }
 

@@ -58,11 +58,17 @@ local gruvbox_material = {
 
 local tokyonight = {
   'folke/tokyonight.nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd.colorscheme 'tokyonight'
+    vim.opt.fillchars = { eob = ' ' }
+  end,
 }
 
 return {
-  catppuccin,
-  -- tokyonight,
+  -- catppuccin,
+  tokyonight,
   -- rosepine,
   -- gruvbox_material,
 }
