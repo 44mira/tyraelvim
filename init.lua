@@ -55,7 +55,12 @@ bind('n', '<leader>nb', '<cmd>:enew<CR>', { desc = '[N]ew [B]uffer' })
 --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 
 local servers = {
-  clangd = {},
+  clangd = {
+    cmd = {
+      'clangd',
+      '--offset-encoding=utf-16',
+    },
+  },
   pyright = {},
   rust_analyzer = {},
   tailwindcss = {},
