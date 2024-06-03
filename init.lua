@@ -30,6 +30,11 @@ bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
 bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 
+-- Zen mode
+bind('n', '<leader>zen', function()
+  require('zen-mode').toggle()
+end, { desc = '[Zen] mode' })
+
 -- Select mode code snippet
 bind('v', '<leader><leader>', ':Silicon<cr>', { desc = '[ ][ ] Take code snapshot' })
 
