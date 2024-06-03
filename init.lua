@@ -35,6 +35,9 @@ bind('n', '<leader>zen', function()
   require('zen-mode').toggle()
 end, { desc = '[Zen] mode' })
 
+-- Trigger Twilight
+bind('n', '<leader>tw', '<cmd>Twilight<CR>', { desc = 'Toggle [Tw]ilight' })
+
 -- Select mode code snippet
 bind('v', '<leader><leader>', ':Silicon<cr>', { desc = '[ ][ ] Take code snapshot' })
 
