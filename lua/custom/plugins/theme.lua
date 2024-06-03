@@ -7,6 +7,11 @@ local catppuccin = {
   priority = 1000,
   config = function()
     require('catppuccin').setup {
+      custom_highlights = function(colors)
+        return {
+          CodeBlock = { bg = colors.mantle },
+        }
+      end,
       integrations = {
         treesitter = true,
         mini = {
@@ -21,7 +26,6 @@ local catppuccin = {
         cmp = true,
         gitsigns = true,
         harpoon = true,
-        headlines = true,
         aerial = true,
         mason = true,
         neotree = true,
