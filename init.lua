@@ -26,7 +26,7 @@ bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
 -- Close a tab
 bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
 
--- Cycle through tabs
+-- Cycle through buffers
 bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
 bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 
@@ -154,6 +154,8 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+vim.o.conceallevel = 2
+vim.o.concealcursor = 'nc'
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
