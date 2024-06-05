@@ -38,8 +38,10 @@ end, { desc = '[Zen] mode' })
 -- Trigger Twilight
 bind('n', '<leader>tw', '<cmd>Twilight<CR>', { desc = 'Toggle [Tw]ilight' })
 
--- Select mode code snippet
-bind('v', '<leader><leader>', ':Silicon<cr>', { desc = '[ ][ ] Take code snapshot' })
+-- Take code snapshot
+bind('v', '<leader><leader>', function()
+  require('nvim-silicon').clip()
+end, { desc = '[ ][ ] Take code snapshot' })
 
 -- Markdown preview
 bind('n', '<leader>pm', '<cmd>MarkdownPreviewToggle<CR>', { desc = '[P]review [M]arkdown' })
