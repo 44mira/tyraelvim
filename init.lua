@@ -76,6 +76,8 @@ bind('n', '<leader>cc', function()
   end
 end, { desc = '[C]onceal [c]ursor' })
 
+vim.o.foldmethod = 'marker'
+
 -- [[ Language Servers ]]
 
 -- Enable the following language servers
