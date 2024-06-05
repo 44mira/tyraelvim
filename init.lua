@@ -67,6 +67,14 @@ end, {
   desc = 'Re-enable autoformat-on-save',
 })
 
+-- Conceal cursor with in a Neorg file
+bind('n', '<leader>cc', function()
+  if vim.o.concealcursor == '' then
+    vim.o.concealcursor = 'nc'
+  else
+    vim.o.concealcursor = ''
+  end
+end, { desc = '[C]onceal [c]ursor' })
 
 -- [[ Language Servers ]]
 
