@@ -76,8 +76,6 @@ bind('n', '<leader>cc', function()
   end
 end, { desc = '[C]onceal [c]ursor' })
 
-vim.o.foldmethod = 'marker'
-
 -- [[ Language Servers ]]
 
 -- Enable the following language servers
@@ -193,6 +191,19 @@ vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'no'
+
+FoldText = function()
+  local foldStart = vim.fn.getline(vim.v.foldstart)
+  local title = foldStart:match 'Title: (.+){{{.*' or foldStart:match '(.+){{{.*'
+  local icon = ' '
+
+  return icon .. title
+end
+
+vim.o.foldmethod = 'marker'
+vim.o.foldtext = 'v:lua.FoldText()'
+vim.o.foldlevel = 999
+vim.opt.fillchars = { eob = ' ', fold = '⋯' }
 
 -- Decrease update time
 vim.opt.updatetime = 250
