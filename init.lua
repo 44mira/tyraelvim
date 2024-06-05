@@ -24,7 +24,7 @@ bind('n', '<leader>j', '<cmd>IBLDisable | set cc=0<CR>', { desc = 'Disable Inden
 bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
 
 -- Close a tab
-bind('n', '<leader>bd', '<cmd>bd<CR>', { desc = '[B]uffer [D]elete' })
+bind('n', '<leader>bd', '<cmd>bd!<CR>', { desc = '[B]uffer [D]elete' })
 
 -- Cycle through buffers
 bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
