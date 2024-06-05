@@ -179,7 +179,11 @@ vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
+vim.opt.wrap = true
 vim.opt.breakindent = true
+vim.opt.breakindentopt = 'list:-1'
+vim.opt.showbreak = string.rep(' ', 3) -- Make it so that long lines wrap smartly
+vim.opt.linebreak = true
 
 -- Save undo history
 vim.opt.undofile = true
