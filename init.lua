@@ -67,8 +67,6 @@ end, {
   desc = 'Re-enable autoformat-on-save',
 })
 
--- Optional Racket Lambda bind
--- bind('n', '<leader>l', 'iλ<Esc>', { desc = 'Insert Lambda' })
 
 -- [[ Language Servers ]]
 
