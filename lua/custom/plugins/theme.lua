@@ -10,6 +10,7 @@ local catppuccin = {
       custom_highlights = function(colors)
         return {
           CodeBlock = { bg = colors.mantle },
+          Folded = { bg = colors.mantle },
         }
       end,
       integrations = {
@@ -34,7 +35,6 @@ local catppuccin = {
     }
 
     vim.cmd.colorscheme 'catppuccin'
-    vim.opt.fillchars = { eob = ' ' }
   end,
 }
 
@@ -43,8 +43,7 @@ local rosepine = {
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme 'rosepine'
-    vim.opt.fillchars = { eob = ' ' }
+    vim.cmd.colorscheme 'rose-pine'
   end,
 }
 
@@ -56,7 +55,6 @@ local gruvbox_material = {
     vim.g.gruvbox_material_enable_italic = true
     vim.g.gruvbox_material_enable_bold = true
     vim.cmd.colorscheme 'gruvbox-material'
-    vim.opt.fillchars = { eob = ' ' }
   end,
 }
 
@@ -66,13 +64,12 @@ local tokyonight = {
   priority = 1000,
   config = function()
     vim.cmd.colorscheme 'tokyonight'
-    vim.opt.fillchars = { eob = ' ' }
   end,
 }
 
 return {
-  -- catppuccin,
-  tokyonight,
+  catppuccin,
+  -- tokyonight,
   -- rosepine,
   -- gruvbox_material,
 }
