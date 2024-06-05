@@ -8,7 +8,13 @@ return {
   config = function()
     require('neorg').setup {
       load = {
-        ['core.defaults'] = {},
+        ['core.defaults'] = {
+          config = {
+            disable = {
+              'core.esupports.indent',
+            },
+          },
+        },
         ['core.syntax'] = {},
         ['core.keybinds'] = {
           config = {
@@ -20,6 +26,7 @@ return {
               keybinds.remap_event('presenter', 'n', '<leader>]', 'core.presenter.next_page')
               keybinds.remap_event('presenter', 'n', '<leader>[', 'core.presenter.previous_page')
               keybinds.remap_event('norg', 'n', '<leader>e', 'core.looking-glass.magnify-code-block')
+              keybinds.remap_event('norg', 'n', '<C-CR>', 'core.itero.next-iteration')
               keybinds.map('presenter', 'n', '<CR>', 'zo')
             end,
           },
@@ -36,7 +43,6 @@ return {
             type = 'empty',
           },
         },
-        ['core.esupports.indent'] = {},
         ['core.presenter'] = {
           config = {
             zen_mode = 'zen-mode',
