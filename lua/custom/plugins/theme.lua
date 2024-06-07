@@ -1,5 +1,6 @@
 -- You can easily change to a different colorscheme.
 
+-- Title: Themes {{{
 local catppuccin = {
   'catppuccin/nvim',
   name = 'catppuccin',
@@ -66,10 +67,11 @@ local tokyonight = {
     vim.cmd.colorscheme 'tokyonight'
   end,
 }
+-- }}}
 
 return {
-  catppuccin,
-  -- tokyonight,
+  -- catppuccin,
+  tokyonight,
   -- rosepine,
   -- gruvbox_material,
 }

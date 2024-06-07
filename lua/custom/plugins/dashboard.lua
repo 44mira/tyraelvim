@@ -6,6 +6,7 @@
 
 -- Add your headers here. Use [[ ]] Lua rawstrings to preserve spaces.
 -- Each table element is treated as a line, and it is recommended you leave an empty line at the end.
+-- Title: Headers {{{
 HEADERS = {
   {
     [[                                                                            ]],
@@ -36,7 +37,7 @@ HEADERS = {
     [[]],
   },
 }
-
+-- }}}
 -- Add your footers here as single-line strings.
 FOOTERS = {
   'Life is like a box of chocolates. Lami makadawat og kisses.',
