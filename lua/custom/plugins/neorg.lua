@@ -57,7 +57,7 @@ return {
         ['core.dirman'] = {
           config = {
             workspaces = {
-              main = '~/Documents/personal/notes/',
+              main = '~/notes',
             },
             default_workspace = 'main',
             index = 'index.norg',
