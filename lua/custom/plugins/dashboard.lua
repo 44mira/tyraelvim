@@ -4,7 +4,7 @@
 -- Text Pools --
 ----------------
 
--- Title: Headers {{{
+-- [[ Headers ]] {{{
 
 -- Add your headers here. Use [[ ]] Lua rawstrings to preserve spaces.
 -- Each table element is treated as a line, and it is recommended you leave an empty line at the end.
@@ -41,7 +41,7 @@ HEADERS = {
 }
 -- }}}
 
--- Title: Footers and Directories {{{
+-- [[ Footers and Directories ]] {{{
 -- Add your footers here as single-line strings.
 FOOTERS = {
   'Vim btw.',
@@ -61,7 +61,7 @@ DIRECTORIES = {
 -- Randomization Code --
 ------------------------
 
--- {{{
+-- [[ Code ]] {{{
 math.randomseed(os.time())
 
 local function header()
