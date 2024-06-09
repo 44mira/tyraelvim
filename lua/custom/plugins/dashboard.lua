@@ -8,7 +8,6 @@
 
 -- Add your headers here. Use [[ ]] Lua rawstrings to preserve spaces.
 -- Each table element is treated as a line, and it is recommended you leave an empty line at the end.
--- Title: Headers {{{
 HEADERS = {
   {
     [[                                                                            ]],
@@ -67,6 +66,8 @@ DIRECTORIES = {
   [[~/.config]],
 }
 
+-- }}}
+
 ------------------------
 -- Randomization Code --
 ------------------------
@@ -81,6 +82,8 @@ end
 local function footer()
   return FOOTERS[math.random(#FOOTERS)]
 end
+
+-- }}}
 
 ---------------------
 -- Plugin Settings --
