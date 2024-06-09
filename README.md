@@ -52,6 +52,24 @@ And he has finally made his own distribution.
     - Lua `lua_ls`
     - Javascript/Typescript `tsserver`
 
+## Preview Screenshots
+
+> NOTE: background opacity is not a feature included in this distribution but in my Arch Linux + `Hyprland` configuration.
+
+| `init.lua` | `dashboard.lua` |
+| --- | --- |
+| ![image](https://github.com/44mira/tyraelvim/assets/116419708/104c96d7-65d2-45b4-95df-9bd75934c238) | ![image](https://github.com/44mira/tyraelvim/assets/116419708/186980f9-d590-41af-9149-31c4edb0d00c) | 
+
+| `neotree` | `splits and telescope buffer` |
+| --- | --- |
+| ![image](https://github.com/44mira/tyraelvim/assets/116419708/722baf03-e39b-45c9-b410-9a9d0d8f2809) |  ![image](https://github.com/44mira/tyraelvim/assets/116419708/cc71329f-b5bd-4771-b28d-a16756881eda) |
+
+| `neorg with zen-mode and twilight` | `preview markdown` |
+| --- | --- |
+| ![image](https://github.com/44mira/tyraelvim/assets/116419708/c6319d51-f42a-4cb5-a4dc-c0622d3f4f7c) | ![image](https://github.com/44mira/tyraelvim/assets/116419708/779069d5-9049-4951-b12a-3267e3a9e9dc) |
+
+
+
 ## Installation
 
 > **IMPORTANT**: This repository doubles as my backup for my configuration backup so clone from a stable branch version not the main one!
