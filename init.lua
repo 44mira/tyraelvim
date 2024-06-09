@@ -105,6 +105,9 @@ local servers = {
       '--offset-encoding=utf-16',
     },
   },
+  elixirls = {
+    cmd = { '/home/tyrael/Documents/coding/aux/elixir-ls-v0.21.1/language_server.sh' },
+  },
   pyright = {},
   tsserver = {},
   lua_ls = {
