@@ -71,7 +71,7 @@ local tokyonight = {
 
 return {
   -- catppuccin,
-  tokyonight,
+  -- tokyonight,
   -- rosepine,
-  -- gruvbox_material,
+  gruvbox_material,
 }
