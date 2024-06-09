@@ -85,6 +85,13 @@ And he has finally made his own distribution.
     - A Github account eligible for Copilot, if you are planning on using the `copilot.lua` plugin.
 
 2. Clone your stable version of choice
+
+| OS | PATH |
+| :- | :--- |
+| Linux, MacOS | `$XDG_CONFIG_HOME/nvim`, `~/.config/nvim` |
+| Windows (cmd)| `%userprofile%\AppData\Local\nvim\` |
+| Windows (powershell)| `$env:USERPROFILE\AppData\Local\nvim\` |
+
 ```bash
 git clone -b stable-<VERSION> git@https://github.com/44mira/tyraelvim.git 
 "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
