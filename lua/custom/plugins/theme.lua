@@ -1,6 +1,6 @@
 -- You can easily change to a different colorscheme.
 
--- Title: Themes {{{
+-- [[ Themes ]] {{{
 local catppuccin = {
   'catppuccin/nvim',
   name = 'catppuccin',

@@ -5,7 +5,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Title: tyraelvim Keymaps {{{
+-- [[ tyraelvim Keymaps ]] {{{
 
 -- shorthand for binding keymap
 local bind = vim.keymap.set
@@ -79,7 +79,7 @@ end, {
 
 --- }}}
 
--- Title: Language Servers {{{
+-- [[ Language Servers ]] {{{
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -137,14 +137,14 @@ local servers = {
 
 -- }}}
 
--- Title: Fold settings {{{1
+-- [[ Fold settings ]] {{{1
 
 FoldText = function()
   local foldStart = vim.fn.getline(vim.v.foldstart)
-  local title = foldStart:match 'Title: (.+){{{.*' or foldStart:match '(.+){{{.*'
+  local title = foldStart:match '%[%[ (.+) %]%] {{{.*' or foldStart:match '(.+){{{.*'
   local icon = ' '
 
-  return icon .. title
+  return icon .. '[[ ' .. title .. ' ]] '
 end
 
 vim.o.foldmethod = 'marker'
@@ -154,7 +154,7 @@ vim.opt.fillchars = { eob = ' ', fold = '⋯' }
 
 -- }}}1
 
--- Title: Setting opt {{{
+-- [[ Setting opt ]] {{{
 
 vim.opt.termguicolors = true
 
@@ -225,7 +225,7 @@ vim.opt.hlsearch = true
 
 -- }}}
 
--- Title: Kickstart keymaps {{{
+-- [[ Kickstart keymaps ]] {{{
 bind('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
@@ -266,7 +266,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 -- }}}
 
--- Title: Lazy plugin manager {{{
+-- [[ Lazy plugin manager ]] {{{
 --
 --  To check the current status of your plugins, run
 --    :Lazy
