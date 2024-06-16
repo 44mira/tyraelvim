@@ -49,14 +49,14 @@ bind('n', '<leader>pm', '<cmd>MarkdownPreviewToggle<CR>', { desc = '[P]review [M
 -- Note taking
 bind('n', '<leader>nb', '<cmd>:enew<CR>', { desc = '[N]ew [B]uffer' })
 
--- Conceal cursor with in a Neorg file
+-- Toggle conceal level between 0 and 2
 bind('n', '<leader>cc', function()
-  if vim.o.concealcursor == '' then
-    vim.o.concealcursor = 'nc'
+  if vim.o.conceallevel == 0 then
+    vim.o.conceallevel = 2
   else
-    vim.o.concealcursor = ''
+    vim.o.conceallevel = 0
   end
-end, { desc = '[C]onceal [c]ursor' })
+end, { desc = '[C]onceal [l]evel' })
 
 -- Format on save disable on command
 vim.api.nvim_create_user_command('FormatDisable', function(args)
@@ -169,7 +169,6 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-vim.o.conceallevel = 2
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -186,6 +185,8 @@ vim.opt.breakindent = true
 vim.opt.breakindentopt = 'list:-1'
 vim.opt.showbreak = string.rep(' ', 3) -- Make it so that long lines wrap smartly
 vim.opt.linebreak = true
+vim.opt.cocu = 'nvci'
+vim.opt.conceallevel = 2
 
 -- Save undo history
 vim.opt.undofile = true
@@ -428,7 +429,7 @@ require('lazy').setup {
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
           map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+          -- map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
           map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
           map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
