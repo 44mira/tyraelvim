@@ -16,6 +16,7 @@ return {
     line_pad = 1,
     no_window_controls = true,
     to_clipboard = true,
+    no_line_number = true,
     no_round_corner = true,
     shadow_color = '#000000',
     window_title = function()
