@@ -7,9 +7,9 @@ return {
     local leap = require 'leap'
     local bind = vim.keymap.set
 
-    bind({ 'n', 'x', 'o' }, 'r', '<Plug>(leap-forward)')
-    bind({ 'n', 'x', 'o' }, 'R', '<Plug>(leap-backward)')
-    bind({ 'n', 'x', 'o' }, 'gr', '<Plug>(leap-from-window)')
+    bind({ 'n', 'x', 'o' }, '<leader>d', '<Plug>(leap-forward)')
+    bind({ 'n', 'x', 'o' }, '<leader>D', '<Plug>(leap-backward)')
+    bind({ 'n', 'x', 'o' }, '<leader>gd', '<Plug>(leap-from-window)')
 
     leap.setup {}
   end,
