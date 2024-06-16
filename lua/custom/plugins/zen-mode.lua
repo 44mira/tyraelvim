@@ -9,7 +9,7 @@ return {
     plugins = {
       kitty = {
         enabled = true,
-        font = '+2',
+        font = '+4',
       },
     },
   },
