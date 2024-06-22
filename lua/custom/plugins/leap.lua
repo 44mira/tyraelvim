@@ -9,7 +9,7 @@ return {
 
     bind({ 'n', 'x', 'o' }, '<leader>d', '<Plug>(leap-forward)')
     bind({ 'n', 'x', 'o' }, '<leader>D', '<Plug>(leap-backward)')
-    bind({ 'n', 'x', 'o' }, '<leader>gd', '<Plug>(leap-from-window)')
+    -- bind({ 'n', 'x', 'o' }, '<leader>gd', '<Plug>(leap-from-window)')
 
     leap.setup {}
   end,
