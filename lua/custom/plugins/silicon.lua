@@ -5,7 +5,7 @@ return {
   lazy = true,
   cmd = 'Silicon',
   opts = {
-    font = 'CommitMono Nerd Font=18',
+    font = 'FantasqueSansM Nerd Font=20',
     theme = '1337',
     background_image = '/home/tyrael/Pictures/pexels-codioful-7130475.jpg',
     line_offset = function(args)
