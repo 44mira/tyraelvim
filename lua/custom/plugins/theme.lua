@@ -12,6 +12,7 @@ local catppuccin = {
         return {
           CodeBlock = { bg = colors.mantle },
           Folded = { bg = colors.mantle },
+          LineNr = { fg = colors.rosewater },
         }
       end,
       integrations = {
@@ -73,7 +74,16 @@ local nordic = {
   lazy = false,
   priority = 1000,
   config = function()
+    local palette = require 'nordic.colors'
     require('nordic').setup {
+      override = {
+        LineNr = {
+          fg = palette.cyan.dim,
+        },
+        CursorLineNr = {
+          fg = palette.orange.bright,
+        },
+      },
       bold_keywords = true,
       bright_border = true,
       -- transparent_bg = true,
@@ -93,6 +103,6 @@ return {
   -- catppuccin,
   -- tokyonight,
   -- rosepine,
-  -- gruvbox_material,
-  nordic,
+  gruvbox_material,
+  -- nordic,
 }
