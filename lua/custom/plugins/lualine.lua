@@ -5,7 +5,8 @@ end
 local aerial = {
   'aerial',
   -- The separator to be used to separate symbols in status line.
-  sep = ' ) ',
+  -- sep = ' ) ',
+  sep = ' \\ ',
 
   -- The number of symbols to render top-down. In order to render only 'N' last
   -- symbols, negative numbers may be supplied. For instance, 'depth = -1' can
@@ -18,7 +19,8 @@ local aerial = {
   dense = true,
 
   -- The separator to be used to separate symbols in dense mode.
-  dense_sep = ' ) ',
+  -- dense_sep = ' ) ',
+  dense_sep = ' \\ ',
 
   -- Color the symbol icons.
   colored = true,
@@ -52,8 +54,10 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons', 'AndreM222/copilot-lualine' },
   opts = {
     options = {
-      section_separators = { left = '', right = '' },
-      component_separators = { left = ')', right = '(' },
+      -- section_separators = { left = '', right = '' },
+      -- component_separators = { left = ')', right = '(' },
+      section_separators = { left = '', right = '' },
+      component_separators = '\\',
     },
     sections = {
       lualine_b = { 'branch' },
